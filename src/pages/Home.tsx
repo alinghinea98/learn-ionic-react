@@ -1,19 +1,16 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
+import React from 'react';
+import kronsoft from '../assets/images/kronsoft-logo-white.svg';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Learn Ionic-React</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen className="ion-padding">
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
+              <img src={kronsoft} style={{width: '40%'}} alt="logo"/>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer />

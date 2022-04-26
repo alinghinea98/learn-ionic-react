@@ -9,13 +9,13 @@ import {
 	IonItem,
 	IonLabel,
 	IonRow,
-	IonText
 } from '@ionic/react';
 import { calculatorOutline, refreshOutline } from 'ionicons/icons';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsersLIst, setUsersList } from '../features/userSlice';
 import { getUsers } from '../api/user';
+import currentVideo from '../videos/sample.mp4';
 
 interface ContainerProps {
 }
@@ -55,34 +55,44 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
 	return (
 		<div className="container">
 			<IonGrid>
+				{/*<IonRow>*/}
+				{/*	<IonCol>*/}
+				{/*		<IonItem>*/}
+				{/*			<IonLabel position="floating">Your height</IonLabel>*/}
+				{/*			<IonInput ref={heightInput}></IonInput>*/}
+				{/*		</IonItem>*/}
+				{/*	</IonCol>*/}
+				{/*</IonRow>*/}
+				{/*<IonRow>*/}
+				{/*	<IonCol>*/}
+				{/*		<IonItem>*/}
+				{/*			<IonLabel position="floating">Your weight</IonLabel>*/}
+				{/*			<IonInput ref={weightInput}></IonInput>*/}
+				{/*		</IonItem>*/}
+				{/*	</IonCol>*/}
+				{/*</IonRow>*/}
+				{/*<IonRow>*/}
+				{/*	<IonCol className="ion-text-left">*/}
+				{/*		<IonButton onClick={calculateBMI}>*/}
+				{/*			<IonIcon slot="start" icon={calculatorOutline}/>*/}
+				{/*			Calculate*/}
+				{/*		</IonButton>*/}
+				{/*	</IonCol>*/}
+				{/*	<IonCol className="ion-text-right">*/}
+				{/*		<IonButton onClick={clearInputs}>*/}
+				{/*			<IonIcon slot="start" icon={refreshOutline}/>*/}
+				{/*			Reset*/}
+				{/*		</IonButton>*/}
+				{/*	</IonCol>*/}
+				{/*</IonRow>*/}
 				<IonRow>
-					<IonCol>
-						<IonItem>
-							<IonLabel position="floating">Your height</IonLabel>
-							<IonInput ref={heightInput}></IonInput>
-						</IonItem>
-					</IonCol>
-				</IonRow>
-				<IonRow>
-					<IonCol>
-						<IonItem>
-							<IonLabel position="floating">Your weight</IonLabel>
-							<IonInput ref={weightInput}></IonInput>
-						</IonItem>
-					</IonCol>
-				</IonRow>
-				<IonRow>
-					<IonCol className="ion-text-left">
-						<IonButton onClick={calculateBMI}>
-							<IonIcon slot="start" icon={calculatorOutline}/>
-							Calculate
-						</IonButton>
-					</IonCol>
-					<IonCol className="ion-text-right">
-						<IonButton onClick={clearInputs}>
-							<IonIcon slot="start" icon={refreshOutline}/>
-							Reset
-						</IonButton>
+					<IonCol className="grid-center">
+						<video
+							loop
+							muted={true}
+							autoPlay={true}>
+							<source src={currentVideo} type='video/mp4'/>
+						</video>
 					</IonCol>
 				</IonRow>
 				{bmiValue && (<IonRow>

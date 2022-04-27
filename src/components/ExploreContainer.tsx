@@ -89,8 +89,9 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
 					<IonCol className="grid-center">
 						<video
 							loop
-							muted={true}
-							autoPlay={true}>
+							muted
+							controls
+							autoPlay>
 							<source src={currentVideo} type='video/mp4'/>
 						</video>
 					</IonCol>
